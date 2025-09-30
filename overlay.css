@@ -1,0 +1,28 @@
+/* overlay.css - 拡張が追加するオーバーレイのスタイル */
+.extension-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2147483646; /* 高め、ただしbody直下の巨大z-indexに注意 */
+  pointer-events: auto; /* ホバーを受け取る */
+  transition: opacity 0.25s ease;
+}
+
+.extension-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  pointer-events: auto;
+}
+
+/* ホバーで透ける */
+.extension-overlay:hover {
+  opacity: 0.6;
+}
+
+/* 透過時に下のクリックを可能にしたければ pointer-events を none にする等の処理を検討 */
